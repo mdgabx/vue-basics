@@ -7,8 +7,29 @@
 </head>
 <body>
     <div id="app">
-        {{ title }}
+        {{ title }} - {{ author }} - {{ age }}
+
+        <!-- <button v-on:click="age++">
+            Increase Age
+        </button> -->
+
+        <button @click="age++">
+            Increase Age
+        </button>
+        <button @click="age--">
+            Decrease Age
+        </button>
+
+        <!-- <div @click="title = 'new title'">
+            Change title
+        </div> -->
+
+        <div @click="changeTitle('test')">
+            change title
+        </div>
     </div>
+
+
 
     <script src="./app.js"></script>
 </body>
