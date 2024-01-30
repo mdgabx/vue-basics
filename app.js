@@ -8,7 +8,10 @@ const app = Vue.createApp({
             y: 0,
             books: [
                 { title: 'book 1', author: 'test', age: 22, isFav: true },
-                {  title: 'Legend of Drizzt', author: 'RA Salvadore', age: 38,isFav: false }
+                {  title: 'Legend of Drizzt', author: 'RA Salvadore', age: 38, isFav: false },
+                {  title: 'Legend of Drizzt2', author: 'RA Salvadore', age: 38, isFav: true },
+                {  title: 'Legend of Drizzt3', author: 'RA Salvadore', age: 38, isFav: false },
+                {  title: 'Legend of Drizzt4', author: 'RA Salvadore', age: 38, isFav: true }
             ]
         }
     },
@@ -35,6 +38,11 @@ const app = Vue.createApp({
         },
         toggleFav(book) {
             book.isFav = !book.isFav
+        }
+    },
+    computed: {
+        filteredBooks() {
+            return this.books.filter((book) => book.isFav)
         }
     }
 })
