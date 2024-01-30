@@ -7,26 +7,18 @@
 </head>
 <body>
     <div id="app">
-        {{ title }} - {{ author }} - {{ age }}
 
-        <!-- <button v-on:click="age++">
-            Increase Age
-        </button> -->
-
-        <button @click="age++">
-            Increase Age
-        </button>
-        <button @click="age--">
-            Decrease Age
+        <button @click="toggle">
+            <span v-if="showBooks">Hide</span>
+            <span v-else>Show</span>
         </button>
 
-        <!-- <div @click="title = 'new title'">
-            Change title
-        </div> -->
-
-        <div @click="changeTitle('test')">
-            change title
+        <div v-if="showBooks">
+            <p>{{ title }} - {{ author }} - {{ age }}</p>
         </div>
+
+        <p v-show="showBooks">showing books</p>
+
     </div>
 
 

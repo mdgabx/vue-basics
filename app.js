@@ -4,7 +4,8 @@ const app = Vue.createApp({
         return {
             title: 'Legend of Drizzt',
             author: 'RA Salvadore',
-            age: 38
+            age: 38,
+            showBooks: true
         }
     },
     methods: {
@@ -13,6 +14,9 @@ const app = Vue.createApp({
         //     this.age++
         // }
 
+        toggle() {
+            this.showBooks = !this.showBooks
+        },
         changeTitle(title) {
             this.title = title
         }
